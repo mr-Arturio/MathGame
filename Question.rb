@@ -3,9 +3,9 @@
 class Question
   attr_reader :num1, :num2, :correct_answer
 
-  def initialize(num1, num2)
-    @num1 = num1
-    @num2 = num2
+  def initialize
+    @num1 = rand(1..20)
+    @num2 = rand(1..20)
     @correct_answer = num1 + num2
   end
 
@@ -16,4 +16,5 @@ class Question
   def check_answer(answer)
     answer == correct_answer
   end
-end
+
+ end
