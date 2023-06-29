@@ -10,12 +10,12 @@ class Game
     @current_player = @players[@player_index]
   end
 
-  def start_game
-    loop do
+  def start_game # main entry point for the game
+    loop do # loop that continues until the game is over
       puts "--- New Turn ---"
       question = ask_question
       puts "#{@current_player.name}, here's your question: #{question.generate_question_text}"
-      answer = gets.chomp.to_i
+      answer = gets.chomp.to_i # gets the answer from the current player
 
       if question.check_answer(answer)
         puts "Correct!"
@@ -35,12 +35,13 @@ class Game
     announce_winner
   end
 
+
   def ask_question
     Question.new
   end
 
   def display_scores
-    @players.each do |player|
+    @players.each do |player| #loop over each player and prints the info
       puts "#{player.name}: Lives - #{player.lives}/3"
     end
   end
@@ -50,9 +51,9 @@ class Game
     @players.any? { |player| player.lives <= 0 }
   end
 
-  def switch_player
+  def switch_player #updates the player index
     @player_index = (@player_index + 1) % @players.length
-    @current_player = @players[@player_index]
+    @current_player = @players[@player_index] # updates the @current_player variable accordingly.
   end
 
   def announce_winner
