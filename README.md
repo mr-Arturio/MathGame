@@ -22,6 +22,6 @@ The game doesn’t end until one of the players loses all their lives. At this p
 
 
 ### Customization
-You can change game difficulty by changing the random number range in the *Question.rb* file, for example: ```rand(3..50)```, ```(1..10)```
-Or you can add logic to let users type their names.
+You can change the game difficulty by changing the random number range in the *Question.rb* file, for example: ```rand(3..50)```, ```(1..10)```. <br/>
+Also, you can add logic to let users type their names and add some other math operations (/, *)
 
